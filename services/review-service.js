@@ -15,6 +15,12 @@ module.exports = (app) => {
     }
     app.get('/api/reviews/user/:id', findReviewsByUserId);
 
+    const findAllReviews = (req, res) => {
+        dao.findAllReviews()
+            .then(reviews => res.json(reviews));
+    }
+    app.get('/api/reviews', findAllReviews);
+
     const createReview = (req, res) => {
         const newReview = req.body;
         dao.createReview(newReview)
