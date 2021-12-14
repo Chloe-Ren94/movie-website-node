@@ -8,6 +8,13 @@ module.exports = (app) => {
     }
     app.get('/api/movies/:id/reviews', findReviewsByImdbId);
 
+    const findReviewsByUserId = (req, res) => {
+        const id = req.params['id'];
+        dao.findReviewsByUserId(id)
+            .then(reviews => res.json(reviews));
+    }
+    app.get('/api/reviews/user/:id', findReviewsByUserId);
+
     const createReview = (req, res) => {
         const newReview = req.body;
         dao.createReview(newReview)

@@ -4,5 +4,5 @@ const userSchema = mongoose.Schema({
     password: String,
     type: {type: String, enum: ['COMMON', 'VIP', 'ADMIN'], default: 'COMMON'},
     lists: {type: Array, "default": [{"listname": "my favourite", "movies": []}]}
-}, {collection: 'users'});
+}, {collection: 'users', timestamps: true});
 module.exports = userSchema;
