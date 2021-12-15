@@ -7,6 +7,7 @@ const userSchema = mongoose.Schema({
     location: String,
     birthday: Date,
     type: {type: String, enum: ['COMMON', 'VIP', 'ADMIN'], default: 'COMMON'},
-    lists: {type: Array, "default": [{"listname": "favourite", "movies": []}]}
+    lists: {type: Array, "default": [{"listname": "favourite", "movies": []}]},
+    following: {type: Array, "default": []}
 }, {collection: 'users', timestamps: true});
 module.exports = userSchema;
