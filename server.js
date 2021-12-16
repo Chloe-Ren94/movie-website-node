@@ -19,9 +19,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const session = require('express-session')
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 app.use(session({
     secret: 'keyboard cat',
+    store: MongoStore.create({mongoUrl: 'mongodb+srv://chloe:chloe@cluster0.n2sec.mongodb.net/movies?retryWrites=true&w=majority'})
     // cookie: {}
 }));
 
