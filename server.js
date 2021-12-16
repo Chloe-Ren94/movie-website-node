@@ -1,4 +1,5 @@
-const MONGODB_URL = 'mongodb://localhost:27017/movies';
+//const MONGODB_URL = 'mongodb://localhost:27017/movies';
+const MONGODB_URL = 'mongodb+srv://chloe:WH94r12j27@cluster0.n2sec.mongodb.net/movies?retryWrites=true&w=majority'
 const express = require('express');
 const app = express();
 
