@@ -2,7 +2,7 @@
 const MONGODB_URL = 'mongodb+srv://chloe:chloe@cluster0.n2sec.mongodb.net/movies?retryWrites=true&w=majority'
 const express = require('express');
 const app = express();
-app.enable('trust proxy');
+app.set('trust proxy', 1) // trust first proxy
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
