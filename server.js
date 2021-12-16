@@ -6,7 +6,7 @@ app.enable('trust proxy');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
-        "https://modest-yonath-ee1d84.netlify.app/");
+        "https://modest-yonath-ee1d84.netlify.app");
     res.header("Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods",
