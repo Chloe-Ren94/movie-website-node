@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 const session = require('express-session')
 app.use(session({
     secret: 'keyboard cat',
-    cookie: {}
+    // cookie: {}
 }));
 
 const mongoose = require('mongoose');
