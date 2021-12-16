@@ -27,4 +27,14 @@ module.exports = (app) => {
             .then(insertedReview => res.json(insertedReview));
     }
     app.post('/api/reviews', createReview);
+
+    const deleteReview = (req, res) =>
+        dao.deleteReview(req.params.reviewID)
+            .then(status => res.send(status));
+    app.delete('/api/reviews/:reviewID', deleteReview);
+
+    const updateReview = (req, res) =>
+        dao.updateReview(req.body)
+            .then(status => res.send(status));
+    app.put('/api/reviews', updateReview);
 };

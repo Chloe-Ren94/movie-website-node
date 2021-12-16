@@ -12,7 +12,16 @@ const findReviewsByUserId = (userID) =>
 const createReview = (review) =>
     model.create(review);
 
+const deleteReview = (reviewID) =>
+    model.deleteOne({_id: reviewID});
+
+const updateReview = (review) =>
+    model.updateOne({_id: review._id}, {
+        $set: review
+    });
+
 module.exports = {
     findReviewsByImdbId, findReviewsByUserId,
-    createReview, findAllReviews
+    createReview, findAllReviews, deleteReview,
+    updateReview
 };

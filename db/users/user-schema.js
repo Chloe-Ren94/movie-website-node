@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
     bio: String,
     email: String,
     location: String,
-    birthday: Date,
+    birthday: String,
     type: {type: String, enum: ['COMMON', 'VIP', 'ADMIN'], default: 'COMMON'},
     lists: {type: Array, "default": [{"listname": "favourite", "movies": []}]},
     following: {type: Array, "default": []}
