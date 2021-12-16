@@ -2,11 +2,11 @@
 const MONGODB_URL = 'mongodb+srv://chloe:chloe@cluster0.n2sec.mongodb.net/movies?retryWrites=true&w=majority'
 const express = require('express');
 const app = express();
-app.enable('trust proxy')
+app.enable('trust proxy');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
-        "http://localhost:3000");
+        "https://modest-yonath-ee1d84.netlify.app/");
     res.header("Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods",
